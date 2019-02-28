@@ -4,12 +4,14 @@ genrule(
   name = 'preprocessor-flags',
   out = 'out.txt',
   cmd = pkg_config + ' xext --cflags > $OUT',
+  cacheable = False,
 )
 
 genrule(
   name = 'linker-flags',
   out = 'out.txt',
   cmd = pkg_config + ' xext --libs > $OUT',
+  cacheable = False,
 )
 
 prebuilt_cxx_library(
